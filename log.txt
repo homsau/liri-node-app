@@ -35,3 +35,66 @@ Song Artist: Hakuna Matatta
 Song Name: Irmgard
 Song Link: https://open.spotify.com/track/5MTaO16ayYTobmNCuZfqND
 Song Album: Hakuna Matatta
+Command: node liri.js music or node liri.js spotify-this-song
+
+Music Info
+
+Song Artist: Oops!...I Did It Again
+Song Name: Britney Spears
+Song Link: https://open.spotify.com/track/6naxalmIoLFWR0siv8dnQQ
+Song Album: Oops!... I Did It Again
+Command: node liri.js movies or node liri.js movie-this
+
+Movie Info
+
+Title of the movie: Blow
+Year the movie came out: 2001
+IMDB Rating of the movie: 7.6
+Rotten Tomatoes Rating of the movie: 55%
+Country where the movie was produced: USA
+Language of the movie: English
+Plot of the movie: The story of how George Jung, along with the Medellín Cartel headed by Pablo Escobar, established the American cocaine market in the 1970s in the United States.
+Actors in the movie: Johnny Depp, Penélope Cruz, Franka Potente, Rachel Griffiths
+Command: node liri.js tweets or node liri.js my-tweets
+
+Twitter Feed
+
+I am a tweet
+7/3/2018 18:26
+
+So true https://t.co/Pg4Lzc6iwG
+7/2/2018 16:52
+Command: node liri.js music or node liri.js spotify-this-song
+
+Music InfoCommand: node liri.js music or node liri.js spotify-this-song
+
+Music Info
+
+Song Artist: Hakuna Matatta
+Song Name: Irmgard
+Song Link: https://open.spotify.com/track/5MTaO16ayYTobmNCuZfqND
+Song Album: Hakuna Matatta
+Command: node liri.js music or node liri.js spotify-this-song
+
+Music Info
+
+Song Artist: Irmgard
+Song Name: Hakuna Matatta
+Song Link: https://open.spotify.com/track/5MTaO16ayYTobmNCuZfqND
+Song Album: Hakuna Matatta
+Command: node liri.js music or node liri.js spotify-this-song
+
+Music Info
+
+Song Artist: 88rising
+Song Name: Midsummer Madness
+Song Link: https://open.spotify.com/track/0wFmawqundY8rOn9sZUqA6
+Song Album: Midsummer Madness
+Command: node liri.js music or node liri.js spotify-this-song
+
+Music Info
+
+Song Artist: Muse
+Song Name: Madness
+Song Link: https://open.spotify.com/track/0c4IEciLCDdXEhhKxj4ThA
+Song Album: The 2nd Law

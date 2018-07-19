@@ -76,7 +76,7 @@ function music() {
             return console.log('Error occurred: ' + error);
         } else {
             var songInfo = data.tracks.items[0];
-            var songInfoString = ("Song Artist: " + songInfo.name + "\nSong Name: " + songInfo.artists[0].name + "\nSong Link: " + songInfo.external_urls.spotify + "\nSong Album: " + songInfo.album.name + "\n");
+            var songInfoString = ("Song Artist: " + songInfo.artists[0].name + "\nSong Name: " + songInfo.name + "\nSong Link: " + songInfo.external_urls.spotify + "\nSong Album: " + songInfo.album.name + "\n");
             fs.appendFile('./log.txt', '\n\n' + songInfoString, (err) => {
                 if (err) throw err;
             });
