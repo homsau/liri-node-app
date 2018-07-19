@@ -32,6 +32,11 @@ if (command === "tweets" || command === "my-tweets") {
 }
 
 function tweets() {
+    fs.appendFile('./log.txt', 'Command: node liri.js tweets or node liri.js my-tweets\n\nTwitter Feed\n', (error) => {
+        if (error) {
+            return console.log('Error occured: ' + error);
+        }
+    });
     var client = new Twitter(keys.twitter);
     var params = {screen_name: 'Cowartbunga', count: 20}; // TESTED this count to work, but I only have 2 tweets right now.
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
@@ -46,6 +51,9 @@ function tweets() {
                 twitterDate = new Date(tweets[i].created_at);
                 var twitterDateFormat = ((twitterDate.getMonth() + 1) + '/' + twitterDate.getDay() + '/' +  twitterDate.getFullYear() + ' ' +  twitterDate.getHours() + ':' +  twitterDate.getMinutes());
                 twitterString = (twitterText + "\n" + twitterDateFormat + "\n");
+                fs.appendFile('./log.txt', '\n' + twitterString, (err) => {
+    				if (err) throw err;
+                });
                 console.log(twitterString);
             }
         }
@@ -53,6 +61,11 @@ function tweets() {
 }
 
 function music() {
+    fs.appendFile('./log.txt', 'Command: node liri.js music or node liri.js spotify-this-song\n\nMusic Info', (error) => {
+        if (error) {
+            return console.log('Error occured: ' + error);
+        }
+    });
     if (argument === '') {
         argument = 'The Sign Ace of Base';
     }
@@ -63,15 +76,21 @@ function music() {
             return console.log('Error occurred: ' + error);
         } else {
             var songInfo = data.tracks.items[0];
-            console.log("Song Artist: " + songInfo.name);
-            console.log("Song Name: " + songInfo.artists[0].name);
-            console.log("Song Link: " + songInfo.external_urls.spotify);
-            console.log("Song Album: " + songInfo.album.name);
+            var songInfoString = ("Song Artist: " + songInfo.name + "\nSong Name: " + songInfo.artists[0].name + "\nSong Link: " + songInfo.external_urls.spotify + "\nSong Album: " + songInfo.album.name + "\n");
+            fs.appendFile('./log.txt', '\n\n' + songInfoString, (err) => {
+                if (err) throw err;
+            });
+            console.log(songInfoString);
         }
     });
 }
 
 function movies() {
+    fs.appendFile('./log.txt', 'Command: node liri.js movies or node liri.js movie-this\n\nMovie Info', (error) => {
+        if (error) {
+            return console.log('Error occured: ' + error);
+        }
+    });
     if (argument === '') {
         argument = 'Mr. Nobody';
     }
@@ -81,15 +100,18 @@ function movies() {
         // If the request is successful (i.e. if the response status code is 200)
         if (!error && response.statusCode === 200) {
             var data = JSON.parse(body);
-            // console.log(JSON.stringify(response));
-            console.log("Title of the movie: " + data.Title);
-            console.log("Year the movie came out: " + data.Year);
-            console.log("IMDB Rating of the movie: " + data.imdbRating);
-            console.log("Rotten Tomatoes Rating of the movie: " + data.tomatoRating);
-            console.log("Country where the movie was produced: " +  data.Country);
-            console.log("Language of the movie: " + data.Language);
-            console.log("Plot of the movie: " + data.Plot);
-            console.log("Actors in the movie: " + data.Actors);
+            var movieDataString = ("Title of the movie: " + data.Title +
+                                 "\nYear the movie came out: " + data.Year +
+                                 "\nIMDB Rating of the movie: " + data.imdbRating +
+                                 "\nRotten Tomatoes Rating of the movie: " + data.Ratings[1].Value +
+                                 "\nCountry where the movie was produced: " +  data.Country +
+                                 "\nLanguage of the movie: " + data.Language +
+                                 "\nPlot of the movie: " + data.Plot +
+                                 "\nActors in the movie: " + data.Actors + "\n");
+            fs.appendFile('./log.txt', '\n\n' + movieDataString, (err) => {
+                if (err) throw err;
+            });
+            console.log(movieDataString);
         }
     });
 }
